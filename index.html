@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Font Generator</title>
+</head>
+<body>
+      <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+
+
+      <input type="range" id="font-size" value="10" step="1" onchange="changeSize(this.value)" />
+      
+
+      <input type="color" onchange="color(this.value)" />
+      <input type="color" oninput="backgroundColor(this.value)"/>
+
+      <select onchange="changeFont(this.value)">
+        <option value="arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="italic">Italic</option>
+      </select>
+
+      <textarea id="text" oninput="changetext(this.value)"></textarea>
+
+      <button class="download_btn">Download</button>
+
+      <p id="paragraph">djsms</p>
+
+      <!-- <textarea id="text"></textarea>
+      <button onclick="addText()">Click</button> -->
+
+      <script src="https://pulipulichen.github.io/blogger/posts/2016/11/r-text-mining/wordcloud2.js"></script>
+      <script src="/index.js"></script>
+</body>
+</html>
