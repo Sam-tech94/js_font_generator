@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Font Generator</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Font Generator</title>
 </head>
+
 <body>
+  <div class="container">
+    <div class="child-1">
       <canvas id="word_cloud" class="word_cloud" width="400" height="400"></canvas>
+    </div>
 
+    <form class="child-2">
+      <input type="text" class="add_text"  />
+      <button class="btn" onclick="add(event)">Add</button>
 
-      <input type="range" id="font-size" value="10" step="1" onchange="changeSize(this.value)" />
-      
+      <label for="font-size">Font Size</label>
+      <input type="range" id="font-size"  value="10" step="1" onchange="changeSize(this.value)" />
+      <label for="font-weight">Font Weight</label>
+      <input type="range" id="font-weight" onchange="changeFontWeight(this.value)" />
 
-      <input type="color" onchange="color(this.value)" />
-      <input type="color" oninput="backgroundColor(this.value)"/>
+      <label for="color">Color</label>
+      <input type="color" id="color" oninput="changeColor(this.value)" />
+      <label for="backgroundColor">Background Color</label>
+      <input type="color" id="backgroundColor" oninput="changeBackground(this.value)" />
 
-      <select onchange="changeFont(this.value)">
-        <option value="arial">Arial</option>
-        <option value="Verdana">Verdana</option>
-        <option value="italic">Italic</option>
-      </select>
-
-      <textarea id="text" oninput="changetext(this.value)"></textarea>
-
+      <select class="select" onchange="changeFont(this.value)"></select>
+    
       <button class="download_btn">Download</button>
+    </form>
+  </div>
 
-      <p id="paragraph">djsms</p>
-
-      <!-- <textarea id="text"></textarea>
-      <button onclick="addText()">Click</button> -->
-
-      <script src="https://pulipulichen.github.io/blogger/posts/2016/11/r-text-mining/wordcloud2.js"></script>
-      <script src="/index.js"></script>
+  <script src="https://pulipulichen.github.io/blogger/posts/2016/11/r-text-mining/wordcloud2.js"></script>
+  <script src="/index.js"></script>
 </body>
+
 </html>
